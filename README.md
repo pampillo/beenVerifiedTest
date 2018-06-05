@@ -8,7 +8,7 @@ a. Install xampp engine from: https://www.apachefriends.org/es/index.html
 b. Place php folder on C:\xampp\htdocs
 
 c. Open xampp: Turn on Apache and MySql services.
-		(If there are some issues refered to port allocation please refer to https://stackoverflow.com/questions/23317372/xampp-port-80-in-use-by-unable-to-open-process-with-pid-4)
+		(If there are some issues referred to port allocation please refer to https://stackoverflow.com/questions/23317372/xampp-port-80-in-use-by-unable-to-open-process-with-pid-4)
 
 d. Create the database: Open  http://localhost/phpmyadmin/ or http://localhost:8080/phpmyadmin/ (if the port was changed).
 
@@ -53,7 +53,7 @@ a. Install ReadyAPI on https://smartbear.com/product/ready-api/free-trial/
 
 b. Once installed load each project on File->Import Project
 
-#### Tests done
+#### Tests that were done
 
 ##### DurationAPI
 
