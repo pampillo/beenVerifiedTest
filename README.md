@@ -47,6 +47,38 @@ http://localhost:8080/php/songsAPI.php
 The tool used for unit testing is https://smartbear.com/product/ready-api/free-trial/
 
 
+#### Set up
+
+a. Install ReadyAPI on https://smartbear.com/product/ready-api/free-trial/
+
+b. Once installed load each project on File->Import Project
+
+#### Tests done
+
+##### DurationAPI
+
+###### Test 1 // Number of items with minDuration: 10 and maxDuration: 900
+minDuration: 10
+maxDuration: 900
+Number of items on JSON file: 14
+Expected number of items: 14
+Result obtained: Passed
+
+###### Test 2 // Number of items with minDuration: 10 and maxDuration: 200
+minDuration: 10
+maxDuration: 200
+Number of items on JSON file: 7
+Expected number of items: 7
+Result obtained: Passed
+
+##### GenresAPI
+
+
+
+##### SongsAPI
+
+
+
 
 	
 	
