@@ -3,7 +3,7 @@
   <con:settings/>
   <con:interface xsi:type="con:RestService" id="07a88538-d2af-40aa-bf63-d30fe8023f56" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8080" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
-    <con:definitionCache/>
+    <con:definitionCache type="TEXT" rootPart=""/>
     <con:endpoints>
       <con:endpoint>http://localhost:8080</con:endpoint>
     </con:endpoints>
@@ -13,6 +13,12 @@
       <con:method name="SongsAPI.php" id="1c605f10-7cd4-4529-810f-51679578c9fd" method="GET">
         <con:settings/>
         <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
         <con:request name="Request 1" id="dd333526-86ab-4785-a9b3-830508ddd073" mediaType="application/json">
           <con:settings/>
           <con:endpoint>http://localhost:8080</con:endpoint>
@@ -26,7 +32,50 @@
       </con:method>
     </con:resource>
   </con:interface>
+  <con:testSuite id="c625f7cf-16c1-4ed2-ba84-ddcc4decb9ea" name="TestSuite 1">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="28152e3b-0a70-4a86-88dd-123b7f73c78e" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="SongsAPI" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="numberSongs" id="becd8dd6-67ef-411b-b19c-95f0dc9bf418">
+        <con:settings/>
+        <con:config service="http://localhost:8080" methodName="SongsAPI.php" resourcePath="/php/songsAPI.php" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="numberSongs" id="3d5a9d87-2878-44cd-b220-9c4925c127d6" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://localhost:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://localhost/php/songsAPI.php</con:originalUri>
+            <con:assertion type="JsonPath Count" id="28ef5d51-0fda-448c-a44a-0365b0c4b426" name="Check count of [0]">
+              <con:configuration>
+                <path>$[*]</path>
+                <content>14</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
   <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:requirements/>
   <con:properties/>
   <con:wssContainer/>
   <con:databaseConnectionContainer/>
@@ -34,9 +83,13 @@
   <con:oAuth2ProfileContainer/>
   <con:oAuth1ProfileContainer/>
   <con:reporting>
+    <con:reportTemplates/>
+    <con:xmlTemplates/>
     <con:xmlTemplates/>
     <con:parameters/>
+    <con:parameters/>
   </con:reporting>
+  <con:reporting/>
   <con:authRepository/>
   <con:tags/>
 </con:soapui-project>
