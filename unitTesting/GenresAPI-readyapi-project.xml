@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="6492ba9b-f90f-4905-ab3d-4b10770479b9" created="2.3.0" activeEnvironment="Default environment" name="GenresAPI" resourceRoot="" updated="2.3.0 2018-03-06T16:28:42Z" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:RestService" id="7b80265e-0349-4fe8-a1f7-1cd4149ae946" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8080" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>http://localhost:8080</con:endpoint>
+    </con:endpoints>
+    <con:resource name="GenresAPI.php" path="/php/genresAPI.php" id="045cdf23-a3e2-4d0f-ac75-d1dc9a2a5491">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="GenresAPI.php" id="b1b08200-00cb-46a9-b33a-10ffff179b9c" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="4443be26-da3a-46be-870b-98bd35765055" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>http://localhost:8080</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="90f9b59f-41d5-4c48-a358-916d6811d8b0" name="http://localhost:8080 TestSuite">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="99cc9b39-80d4-4666-bd53-2bbbea448530" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="GenresAPI" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="numberGenres" id="4fee13b9-6d41-4834-a6d8-4a8c90c5d632">
+        <con:settings/>
+        <con:config service="http://localhost:8080" resourcePath="/php/genresAPI.php" methodName="GenresAPI.php" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="numberGenres" id="4443be26-da3a-46be-870b-98bd35765055" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://localhost/php/genresAPI.php</con:originalUri>
+            <con:assertion type="JsonPath Count" id="2ca0384b-dd3e-41f2-9fc2-a069db63ca3b" name="Check count of [0]">
+              <con:configuration>
+                <path>$[*]</path>
+                <content>8</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Count" id="da7e94b1-84e4-47ce-bfba-e4e04ac38afd" name="Check count of [0]">
+              <con:configuration>
+                <path>$[*]</path>
+                <content>8</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="classicSongsNumber" id="a93ac9f3-d3d7-408f-b42f-1cc52964dd22">
+        <con:settings/>
+        <con:config service="http://localhost:8080" methodName="GenresAPI.php" resourcePath="/php/genresAPI.php" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="classicSongsNumber" id="d5854a67-5844-4a8f-85fe-4f9ce1d589d2" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://localhost:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://localhost/php/genresAPI.php</con:originalUri>
+            <con:assertion type="JsonPath Match" id="88a176fc-9dd0-43d5-9b79-b960201390a9" name="Match content of [songs]">
+              <con:configuration>
+                <path>$[0]['songs']</path>
+                <content>2</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:xmlTemplates/>
+    <con:parameters/>
+  </con:reporting>
+  <con:authRepository/>
+  <con:tags/>
+</con:soapui-project>

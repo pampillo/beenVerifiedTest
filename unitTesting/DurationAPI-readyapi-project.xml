@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="1cb62bbf-386b-4a2e-9ec9-07ecd143beb1" created="2.3.0" activeEnvironment="Default environment" name="DurationAPI" updated="2.3.0 2018-03-06T16:28:42Z" encryptionMode="Not encrypted" resourceRoot="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:RestService" id="4e8af8eb-3be6-4655-9946-53ef85d492dd" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8080" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>http://localhost:8080</con:endpoint>
+    </con:endpoints>
+    <con:resource name="DurationAPI.php" path="/php/durationAPI.php" id="d7c84a0f-ed80-47a5-b836-a6b34a68c83b">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>minDuration</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>maxDuration</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="DurationAPI.php" id="e2e9d5c5-3116-460d-af20-d470ebe862ee" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:request name="Request 1" id="c2395d03-8678-4ea3-9e7f-594b16635e6e" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://localhost:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://localhost/php/durationAPI.php</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters>
+            <con:entry key="minDuration" value="10"/>
+            <con:entry key="maxDuration" value="900"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>minDuration</con:entry>
+            <con:entry>maxDuration</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="1afca677-f7e6-41bd-850f-e83c21e98320" name="http://localhost:8080 TestSuite">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="ecda1b00-e966-4626-a0b3-11c788d0b012" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="DurationAPI" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="min10max200" id="9450e915-7b13-4d16-872f-a6a089ab2edc">
+        <con:settings/>
+        <con:config service="http://localhost:8080" methodName="DurationAPI.php" resourcePath="/php/durationAPI.php" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="min10max200" id="f7a4a636-0371-4a23-b698-ebc17ef5cfdf" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://localhost:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://localhost/php/durationAPI.php</con:originalUri>
+            <con:assertion type="JsonPath Count" id="ab42bea9-7ec1-45f7-82c2-10880ff2ccef" name="Check count of [0]">
+              <con:configuration>
+                <path>$[*]</path>
+                <content>7</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="minDuration" value="10"/>
+              <con:entry key="maxDuration" value="200"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="min10max900" id="716ca9be-27ae-44a8-8c30-04458ff6f610">
+        <con:settings/>
+        <con:config service="http://localhost:8080" resourcePath="/php/durationAPI.php" methodName="DurationAPI.php" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="min10max900" id="c2395d03-8678-4ea3-9e7f-594b16635e6e" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://localhost/php/durationAPI.php</con:originalUri>
+            <con:assertion type="JsonPath Count" id="f80fd03c-c955-4c40-88a8-24390b740e0e" name="Check count of [0]">
+              <con:configuration>
+                <path>$[*]</path>
+                <content>14</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="minDuration" value="10"/>
+              <con:entry key="maxDuration" value="900"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>minDuration</con:entry>
+              <con:entry>maxDuration</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:xmlTemplates/>
+    <con:parameters/>
+  </con:reporting>
+  <con:authRepository/>
+  <con:tags/>
+</con:soapui-project>

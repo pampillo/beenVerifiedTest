@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ce91ec11-b243-4f2f-b4b1-ba1a4305e4c2" created="2.3.0" activeEnvironment="Default environment" name="SongsAPI" resourceRoot="" updated="2.3.0 2018-03-06T16:28:42Z" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:RestService" id="07a88538-d2af-40aa-bf63-d30fe8023f56" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8080" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache/>
+    <con:endpoints>
+      <con:endpoint>http://localhost:8080</con:endpoint>
+    </con:endpoints>
+    <con:resource name="SongsAPI.php" path="/php/songsAPI.php" id="d30f15cc-b484-4406-9071-24f58e00ba1c">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="SongsAPI.php" id="1c605f10-7cd4-4529-810f-51679578c9fd" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="dd333526-86ab-4785-a9b3-830508ddd073" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>http://localhost:8080</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:xmlTemplates/>
+    <con:parameters/>
+  </con:reporting>
+  <con:authRepository/>
+  <con:tags/>
+</con:soapui-project>
