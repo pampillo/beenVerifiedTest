@@ -11,7 +11,7 @@ $sql = "
 SELECT g.name, COUNT(s.title) as songs, SUM(s.duration) as totalLength FROM `GENRES` g INNER join songs s on g.id=s.genre GROUP BY g.name;
 ";
     
- 
+ //getting data
 $result = $mysqli->query($sql);
 
 
@@ -21,7 +21,7 @@ if (mysqli_connect_errno()) {
 }else{
    
     if ($result->num_rows > 0) {
-        // Fetching all th
+        // Fetching all the data
         $array = NULL;
         while($row = $result->fetch_assoc())
             $array[] = $row;
