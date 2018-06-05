@@ -17,7 +17,7 @@ $result = $mysqli->query($sql);
 
 if (mysqli_connect_errno()) {
         $response["success"] = 0;
-		$response["message"] = "Error conection";
+		$response["message"] = "Error connection";
 }else{
    
     if ($result->num_rows > 0) {
