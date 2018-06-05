@@ -58,51 +58,51 @@ b. Once installed load each project on File->Import Project
 ##### DurationAPI
 
 ###### Test 1 // Number of items with minDuration: 10 and maxDuration: 900
-####### Inputs
-minDuration: 10
-maxDuration: 900
-####### Results
-Number of items on JSON file: 14
-Expected number of items: 14
-Result obtained: Passed
+**Inputs:**
+*minDuration:* 10
+*maxDuration:* 900
+**Results:**
+*Number of items on JSON file:* 14
+*Expected number of items:* 14
+*Result obtained:* Passed
 
 ###### Test 2 // Number of items with minDuration: 10 and maxDuration: 200
-####### Inputs
-minDuration: 10
-maxDuration: 200
-####### Results
-Number of items on JSON file: 7
-Expected number of items: 7
-Result obtained: Passed
+**Inputs:**
+*minDuration:* 10
+*maxDuration:* 200
+**Results:**
+*Number of items on JSON file:* 7
+*Expected number of items:* 7
+*Result obtained:* Passed
 
 ##### GenresAPI
 
 ###### Test 1 // Number of items
-####### Inputs
+**Inputs:**
 No inputs
-####### Results
-Number of items on JSON file: 8
-Expected number of items: 8
-Result obtained: Passed
+**Results:**
+*Number of items on JSON file:* 8
+*Expected number of items:* 8
+*Result obtained:* Passed
 
 ###### Test 2 // Number of classical music songs
-####### Inputs
+**Inputs:**
 No inputs
-####### Results
-Result on JSON file: 2
-Expected result: 2
-Result obtained: Passed
+**Results:**
+*Result on JSON file:* 2
+*Expected result:* 2
+*Result obtained:* Passed
 
 
 ##### SongsAPI
 
 ###### Test 1 // Number of songs
-####### Inputs
+**Inputs:**
 No inputs
-####### Results
-Number of items on JSON file: 14
-Expected number of items: 14
-Result obtained: Passed
+**Results:**
+*Number of items on JSON file:* 14
+*Expected number of items:* 14
+*Result obtained:* Passed
 
 
 	
